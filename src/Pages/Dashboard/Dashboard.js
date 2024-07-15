@@ -5,7 +5,11 @@ import auth from "../../firebase.init";
 
 import logo from "../../Assets/Icons/logo_full.svg";
 
-import { MdSpaceDashboard, MdLibraryBooks } from "react-icons/md";
+import {
+  MdSpaceDashboard,
+  MdLibraryBooks,
+  MdAddToPhotos,
+} from "react-icons/md";
 import { HiChatBubbleBottomCenterText } from "react-icons/hi2";
 import { TbFaceId } from "react-icons/tb";
 import { FaSignOutAlt } from "react-icons/fa";
@@ -40,12 +44,22 @@ const Dashboard = () => {
       icon: HiChatBubbleBottomCenterText,
       text: "Notice",
     },
-    {
+  ];
+
+  if (userData?.role === "0") {
+    menus.splice(4, 0, {
       link: "/dashboard/face-id",
       icon: TbFaceId,
       text: "Face Id",
-    },
-  ];
+    });
+  }
+  if (userData?.role === "1") {
+    menus.splice(1, 0, {
+      link: "/dashboard/add-course",
+      icon: MdAddToPhotos,
+      text: "Add Course",
+    });
+  }
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />

@@ -73,7 +73,7 @@ const Login = () => {
               <input
                 type="email"
                 placeholder="Email"
-                className="input border-b bg-white focus:outline-0 border-[#22283166] text-[#22283180] placeholder:text-[#22283180] border-0 rounded-none p-0 font-poppins h-8"
+                className="input border-b bg-white focus:outline-0 border-black-200 text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8"
                 {...register("email", {
                   required: {
                     value: true,
@@ -91,7 +91,7 @@ const Login = () => {
               <input
                 type={type}
                 placeholder="Password"
-                className="input border-b bg-white focus:outline-0 border-[#22283166] text-[#22283180] placeholder:text-[#22283180] border-0 rounded-none p-0 font-poppins h-8 mt-5"
+                className="input border-b bg-white focus:outline-0 border-black-200 text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8 mt-5"
                 {...register("password", {
                   required: {
                     value: true,
@@ -101,7 +101,7 @@ const Login = () => {
               />
               <span className="flex justify-end items-end">
                 <span className="absolute right-2">
-                  <label className="swap text-[#22283180]">
+                  <label className="swap text-black-100">
                     <input type="checkbox" />
                     <IoEye
                       onClick={() => setType("text")}
@@ -118,14 +118,14 @@ const Login = () => {
               <label
                 htmlFor="reset-modal"
                 onClick={() => setResetModal(true)}
-                className="link link-hover mt-7 font-poppins text-[#22283180]"
+                className="link link-hover mt-7 font-poppins text-black-100"
               >
                 Forgot password?
               </label>
             </div>
             <div className="form-control mt-10">
               <input
-                className="btn rounded-xl font-poppins text-base font-normal btn-primary disabled:bg-[#be2719b3] disabled:pointer-events-auto disabled:cursor-no-drop disabled:hover:bg-[#be2719b3] disabled:text-[#f8d7d1] disabled:hover:text-[#f8d7d1]"
+                className="btn rounded-xl font-poppins text-base font-normal btn-primary disabled:bg-primary-100 disabled:pointer-events-auto disabled:cursor-no-drop disabled:hover:bg-primary-100 disabled:text-disable-100 disabled:hover:text-disable-100"
                 type="submit"
                 value="Login"
                 disabled={loading}
@@ -135,7 +135,7 @@ const Login = () => {
         }
         footer={
           <div className="flex items-center gap-8 justify-center pt-12">
-            <span className="text-[#22283180] font-poppins">
+            <span className="text-black-100 font-poppins">
               Don’t have an account?
             </span>
             <Link

@@ -1,4 +1,5 @@
 import React from "react";
+import { useOutletContext } from "react-router-dom";
 import { format } from "date-fns";
 
 // Image
@@ -7,7 +8,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
 const DashboardHome = () => {
-  const [user] = useAuthState(auth);
+  const [user, auth, userData, isLoading, refetch] = useOutletContext();
   const date = format(new Date(), "MMMM dd, yyyy");
   return (
     <div>
@@ -21,7 +22,7 @@ const DashboardHome = () => {
           <p className="text-[#FFFFFFBF] font-poppins">{date}</p>
           <div>
             <h3 className="text-white font-poppins font-semibold text-3xl">
-              Welcome back, {user?.displayName.split(" ")[0]}!
+              Welcome back, {userData?.firstName}!
             </h3>
             <p className="text-[#FFFFFFBF] font-poppins text-lg">
               Always stay updated with SCU 360

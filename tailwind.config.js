@@ -5,6 +5,14 @@ module.exports = {
     extend: {
       colors: {
         "black-100": "#22283180",
+        "black-200": "#22283166",
+        "black-300": "#00000080",
+        "black-400": "#0C0C0C",
+        "black-500": "#000000d9",
+        "black-600": "#686D76",
+        "white-100": "#f0f0f0",
+        "disable-100": "#f8d7d1",
+        "primary-100": "#be2719b3",
       },
       backgroundImage: {
         loader: "url('/src/Assets/Icons/logo_full.svg')",
@@ -47,8 +55,6 @@ module.exports = {
           "base-100": "#EEE",
         },
       },
-      "dark",
-      "cupcake",
     ],
   },
 };

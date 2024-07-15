@@ -56,7 +56,7 @@ const ResetPasswordModal = ({ setResetModal }) => {
               <input
                 type="email"
                 placeholder="Email"
-                className="input border-b bg-white focus:outline-0 border-[#22283166] text-[#22283180] placeholder:text-[#22283180] border-0 rounded-none p-0 font-poppins h-8"
+                className="input border-b bg-white focus:outline-0 border-black-200 text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8"
                 {...register("email", {
                   required: {
                     value: true,
@@ -72,7 +72,7 @@ const ResetPasswordModal = ({ setResetModal }) => {
             </div>
             <div className="form-control mt-6">
               <input
-                className="btn rounded-xl font-poppins text-base font-normal btn-primary disabled:bg-[#be2719b3] disabled:pointer-events-auto disabled:cursor-no-drop disabled:hover:bg-[#be2719b3] disabled:text-[#f8d7d1] disabled:hover:text-[#f8d7d1]"
+                className="btn rounded-xl font-poppins text-base font-normal btn-primary disabled:bg-primary-100 disabled:pointer-events-auto disabled:cursor-no-drop disabled:hover:bg-primary-100 disabled:text-disable-100 disabled:hover:text-disable-100"
                 type="submit"
                 value="Reset"
                 disabled={sending}

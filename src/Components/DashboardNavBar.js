@@ -9,7 +9,7 @@ const DashboardNavBar = ({ user, userData }) => {
           <input
             type="text"
             placeholder="Search"
-            className="input rounded-3xl drop-shadow-2xl border-0 focus:border-0 focus:border-black-100 focus:outline-[2.5px] w-72 placeholder:text-right placeholder:pr-5 font-poppins text-[#00000080]"
+            className="input rounded-3xl drop-shadow-2xl border-0 focus:border-0 focus:border-black-100 focus:outline-[2.5px] w-72 placeholder:text-right placeholder:pr-5 font-poppins text-black-300"
           />
         </div>
       </div>
@@ -29,7 +29,7 @@ const DashboardNavBar = ({ user, userData }) => {
                   <img src={user?.photoURL} alt="User" />
                 ) : (
                   <div className="flex justify-center items-center text-3xl font-poppins font-bold h-full">
-                    <p>{user?.displayName[0]}</p>
+                    <p>{userData?.firstName[0]}</p>
                   </div>
                 )}
               </div>
@@ -38,7 +38,7 @@ const DashboardNavBar = ({ user, userData }) => {
               <h3 className="font-poppins font-semibold">
                 {userData?.firstName + " " + userData?.lastName}
               </h3>
-              <p className="font-poppins text-[#00000080]">
+              <p className="font-poppins text-black-300">
                 {userData?.idNumber.substring(0, 4)} Batch
               </p>
             </div>

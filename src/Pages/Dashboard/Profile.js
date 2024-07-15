@@ -133,12 +133,12 @@ const Profile = () => {
           {user?.photoURL ? (
             <img className="rounded-full" src={user?.photoURL} alt="User" />
           ) : (
-            <div className="flex justify-center items-center text-9xl font-poppins font-bold h-full w-full">
-              <p>{user?.displayName[0]}</p>
-            </div>
+            <p className="flex justify-center items-center text-9xl font-poppins font-bold h-full w-full">
+              <p>{userData?.firstName[0]}</p>
+            </p>
           )}
         </div>
-        <div className="mt-[-3.2rem] z-10">
+        <div className="aspect-auto mt-[-3.2rem] z-10">
           <label
             className="cursor-pointer font-roboto text-base font-semibold text-primary bg-white px-4 py-1 rounded"
             htmlFor="files"
@@ -160,7 +160,7 @@ const Profile = () => {
             <input
               type="email"
               placeholder="Email"
-              className="input disabled:bg-transparent border-b bg-white focus:outline-0 border-[#22283166] text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8"
+              className="input disabled:bg-transparent border-b bg-white focus:outline-0 border-black-200 text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8"
               value={user?.email}
               disabled
             />
@@ -169,7 +169,7 @@ const Profile = () => {
             <input
               type="text"
               placeholder="First Name"
-              className="input border-b bg-white focus:outline-0 border-[#22283166] text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8 mt-5"
+              className="input border-b bg-white focus:outline-0 border-black-200 text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8 mt-5"
               {...register("firstName", {
                 required: {
                   value: true,
@@ -190,7 +190,7 @@ const Profile = () => {
             <input
               type="text"
               placeholder="Last Name"
-              className="input border-b bg-white focus:outline-0 border-[#22283166] text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8 mt-5"
+              className="input border-b bg-white focus:outline-0 border-black-200 text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8 mt-5"
               {...register("lastName", {
                 required: {
                   value: true,
@@ -210,8 +210,9 @@ const Profile = () => {
           <div className="form-control">
             <input
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Identity Number"
-              className="input border-b bg-white focus:outline-0 border-[#22283166] text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8 mt-5"
+              className="input border-b bg-white focus:outline-0 border-black-200 text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8 mt-5"
               {...register("idNumber", {
                 required: {
                   value: true,
@@ -230,7 +231,7 @@ const Profile = () => {
           </div>
           <div className="form-control mt-10">
             <input
-              className="btn rounded-xl font-poppins text-base font-normal btn-primary disabled:bg-[#be2719b3] disabled:pointer-events-auto disabled:cursor-no-drop disabled:hover:bg-[#be2719b3] disabled:text-[#f8d7d1] disabled:hover:text-[#f8d7d1]"
+              className="btn rounded-xl font-poppins text-base font-normal btn-primary disabled:bg-primary-100 disabled:pointer-events-auto disabled:cursor-no-drop disabled:hover:bg-primary-100 disabled:text-disable-100 disabled:hover:text-disable-100"
               type="submit"
               value="Update"
               disabled={isLoading}

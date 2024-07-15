@@ -31,7 +31,7 @@ const NavBar = () => {
             >
               <li>
                 <Link
-                  className="text-[#0C0C0C] hover:text-[#0C0C0C] font-roboto font-medium"
+                  className="text-black-400 hover:text-black-400 font-roboto font-medium"
                   to="/"
                 >
                   Home
@@ -39,7 +39,7 @@ const NavBar = () => {
               </li>
               <li>
                 <Link
-                  className="text-[#0C0C0C] hover:text-[#0C0C0C] font-roboto font-medium"
+                  className="text-black-400 hover:text-black-400 font-roboto font-medium"
                   to={{
                     pathname: "https://global.scu.edu.cn/oso/article/index/5",
                   }}
@@ -50,7 +50,7 @@ const NavBar = () => {
               </li>
               <li>
                 <Link
-                  className="text-[#0C0C0C] hover:text-[#0C0C0C] font-roboto font-medium"
+                  className="text-black-400 hover:text-black-400 font-roboto font-medium"
                   to="/events"
                 >
                   Events
@@ -70,7 +70,7 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1">
             <li>
               <Link
-                className="text-[#0C0C0C] hover:text-[#0C0C0C] font-roboto font-medium"
+                className="text-black-400 hover:text-black-400 font-roboto font-medium"
                 to="/"
               >
                 Home
@@ -78,7 +78,7 @@ const NavBar = () => {
             </li>
             <li>
               <Link
-                className="text-[#0C0C0C] hover:text-[#0C0C0C] font-roboto font-medium"
+                className="text-black-400 hover:text-black-400 font-roboto font-medium"
                 to={{
                   pathname: "https://global.scu.edu.cn/oso/article/index/5",
                 }}
@@ -89,7 +89,7 @@ const NavBar = () => {
             </li>
             <li>
               <Link
-                className="text-[#0C0C0C] hover:text-[#0C0C0C] font-roboto font-medium"
+                className="text-black-400 hover:text-black-400 font-roboto font-medium"
                 to="/events"
               >
                 Events
@@ -100,7 +100,7 @@ const NavBar = () => {
         <div className="navbar-end">
           <Link
             to="/login"
-            className="btn rounded-lg hover:!text-[#f8d7d1] !text-white font-poppins font-medium bg-[#BE2619] hover:bg-[#AD2317] px-8"
+            className="btn rounded-lg hover:!text-disable-100 !text-white font-poppins font-medium bg-primary hover:bg-[#AD2317] px-8"
           >
             Get Started
           </Link>

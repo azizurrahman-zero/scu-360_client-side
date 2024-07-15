@@ -54,21 +54,15 @@ const Signup = () => {
   }
 
   const onSubmit = (data) => {
-    const { email, firstName, lastName, password, role, idNumber } = data;
-    const user = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      role: role,
-      idNumber: idNumber,
-    };
+    const { email, password } = data;
     createUserWithEmailAndPassword(email, password).then(() => {
+      delete data.password;
       fetch("http://localhost:5000/add-user", {
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify(user),
+        body: JSON.stringify(data),
       })
         .then((res) => res.json())
         .then(() => {
@@ -94,7 +88,7 @@ const Signup = () => {
             <input
               type="email"
               placeholder="Email"
-              className="input border-b bg-white focus:outline-0 border-[#22283166] text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8"
+              className="input border-b bg-white focus:outline-0 border-black-200 text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8"
               {...register("email", {
                 required: {
                   value: true,
@@ -112,7 +106,7 @@ const Signup = () => {
             <input
               type="text"
               placeholder="First Name"
-              className="input border-b bg-white focus:outline-0 border-[#22283166] text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8 mt-5"
+              className="input border-b bg-white focus:outline-0 border-black-200 text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8 mt-5"
               {...register("firstName", {
                 required: {
                   value: true,
@@ -133,7 +127,7 @@ const Signup = () => {
             <input
               type="text"
               placeholder="Last Name"
-              className="input border-b bg-white focus:outline-0 border-[#22283166] text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8 mt-5"
+              className="input border-b bg-white focus:outline-0 border-black-200 text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8 mt-5"
               {...register("lastName", {
                 required: {
                   value: true,
@@ -163,7 +157,7 @@ const Signup = () => {
                 defaultChecked
               />
               <label
-                className="text-black-100 w-full block font-poppins border-b border-b-[#22283166] pb-[3.5px] peer-checked:border-b-2"
+                className="text-black-100 w-full block font-poppins border-b border-b-black-200 pb-[3.5px] peer-checked:border-b-2"
                 for="student"
               >
                 Student
@@ -180,7 +174,7 @@ const Signup = () => {
                 })}
               />
               <label
-                className="text-black-100 w-full block font-poppins border-b border-b-[#22283166] pb-[3.5px] peer-checked:border-b-2"
+                className="text-black-100 w-full block font-poppins border-b border-b-black-200 pb-[3.5px] peer-checked:border-b-2"
                 for="lecturer"
               >
                 Lecturer
@@ -190,8 +184,9 @@ const Signup = () => {
           <div className="form-control">
             <input
               type="number"
+              onWheel={(e) => e.target.blur()}
               placeholder="Identity Number"
-              className="input border-b bg-white focus:outline-0 border-[#22283166] text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8 mt-5"
+              className="input border-b bg-white focus:outline-0 border-black-200 text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8 mt-5"
               {...register("idNumber", {
                 required: {
                   value: true,
@@ -212,7 +207,7 @@ const Signup = () => {
             <input
               type={type}
               placeholder="Password"
-              className="input border-b bg-white focus:outline-0 border-[#22283166] text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8 mt-5"
+              className="input border-b bg-white focus:outline-0 border-black-200 text-black-100 placeholder:text-black-100 border-0 rounded-none p-0 font-poppins h-8 mt-5"
               {...register("password", {
                 required: {
                   value: true,
@@ -242,7 +237,7 @@ const Signup = () => {
           </div>
           <div className="form-control mt-10">
             <input
-              className="btn rounded-xl font-poppins text-base font-normal btn-primary disabled:bg-[#be2719b3] disabled:pointer-events-auto disabled:cursor-no-drop disabled:hover:bg-[#be2719b3] disabled:text-[#f8d7d1] disabled:hover:text-[#f8d7d1]"
+              className="btn rounded-xl font-poppins text-base font-normal btn-primary disabled:bg-primary-100 disabled:pointer-events-auto disabled:cursor-no-drop disabled:hover:bg-primary-100 disabled:text-disable-100 disabled:hover:text-disable-100"
               type="submit"
               value="Sign up"
               disabled={loading}

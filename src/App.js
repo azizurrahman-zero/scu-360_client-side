@@ -23,6 +23,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { UserProvider } from "./Context/UserContext";
 import UserRoute from "./Pages/Authentication/UserRoute";
+import AddCourse from "./Pages/Dashboard/AddCourse";
+import LecturerRoute from "./Pages/Authentication/LecturerRoute";
 
 function App() {
   return (
@@ -51,6 +53,14 @@ function App() {
             <Route index element={<DashboardHome />} />
             <Route path="profile" element={<Profile />} />
             <Route path="courses" element={<Courses />} />
+            <Route
+              path="add-course"
+              element={
+                <LecturerRoute>
+                  <AddCourse />
+                </LecturerRoute>
+              }
+            />
             <Route path="notice" element={<Notice />} />
             <Route path="face-id" element={<FaceId />}>
               <Route index element={<UploadPhoto />} />

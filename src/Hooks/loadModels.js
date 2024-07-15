@@ -1,6 +1,5 @@
 import * as faceAPI from "face-api.js";
 
-// Toastify
 import { toast } from "react-toastify";
 
 export const loadModels = async () => {

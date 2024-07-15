@@ -5,11 +5,11 @@ import auth from "../firebase.init";
 
 import { toast } from "react-toastify";
 
-const useUserData = (user) => {
-  const [userData, setUserData] = useState(null);
+const useCourses = (user) => {
+  const [courses, setCourses] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const fetchUserData = useCallback(async () => {
+  const fetchCourses = useCallback(async () => {
     if (!user) {
       setIsLoading(false);
       return;
@@ -17,14 +17,14 @@ const useUserData = (user) => {
 
     try {
       const userEmail = user?.email;
-      const url = `http://localhost:5000/get-user-data?email=${userEmail}`;
+      const url = `http://localhost:5000/get-courses?email=${userEmail}`;
 
       const response = await axios.get(url, {
         headers: {
           authorization: localStorage.getItem("accessToken"),
         },
       });
-      setUserData(response.data);
+      setCourses(response.data);
     } catch (error) {
       if (
         error.response &&
@@ -46,15 +46,15 @@ const useUserData = (user) => {
   }, [user]);
 
   useEffect(() => {
-    fetchUserData();
-  }, [fetchUserData]);
+    fetchCourses();
+  }, [fetchCourses]);
 
   const refetch = () => {
     setIsLoading(true);
-    fetchUserData();
+    fetchCourses();
   };
 
-  return { userData, isLoading, refetch };
+  return { courses, isLoading, refetch };
 };
 
-export default useUserData;
+export default useCourses;
